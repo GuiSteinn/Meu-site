@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <script language="JavaScript">
+        function tabuada() {
+            let num = parseInt(document.getElementById('inum').value);
+            let maxNum = parseInt(document.getElementById('maxNum').value);
+            let showAll = document.getElementById('showAll').checked;
+            let resultado = "";
+
+            for (i = 1; i <= num; i++) {
+                resultado += `<h2>Tabuada do ${i}:</h2>`;
+                for (j = 1; j <= maxNum; j++) {
+                    resultado += `${i} x ${j} = ${i * j}<br>`;
+                }
+                resultado += "<br>";
+                if (!showAll) break;
+            }
+
+            document.getElementById('dresultado').innerHTML = resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <label for="inum">Número da tabuada:</label>
+    <input type="number" id="inum" value="2" step="1">
+    <br>
+    <label for="maxNum">Até qual número:</label>
+    <input type="number" id="maxNum" value="10" step="1">
+    <br>
+    <input type="checkbox" id="showAll">
+    <label for="showAll">Exibir todas as tabuadas de 1 até a tabuada informada</label>
+    <br>
+    <button onclick="tabuada()">
+        Exibir
+    </button>
+    <br>
+    <div id="dresultado"></div>
+</body>
+</html>
