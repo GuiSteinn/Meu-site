@@ -11,9 +11,9 @@
             let showAll = document.getElementById('showAll').checked;
             let resultado = "";
 
-            for (i = 1; i <= num; i++) {
+            for (let i = 1; i <= num; i++) {
                 resultado += `<h2>Tabuada do ${i}:</h2>`;
-                for (j = 1; j <= maxNum; j++) {
+                for (let j = 1; j <= maxNum; j++) {
                     resultado += `${i} x ${j} = ${i * j}<br>`;
                 }
                 resultado += "<br>";
